@@ -1,46 +1,59 @@
 # evio-tauri-client
-A lightweight Tauri-based desktop Client for the browser game [ev.io](https://ev.io), optimized for lightweight and performance.
+
+A lightweight, performance-optimized desktop client for the browser game [ev.io](https://ev.io), built with [Tauri](https://tauri.app).
 
 ## Features
 
-- Tooggle fullscreen using F11.
-- Custom ui to refresh page and paste ev.io room link easily.
-- Optimization using Chromium flag.
-- Rearrange the in-game ui and remove ads.
-- Very lightweight and can be packaged as a small "exe" file.
-- Fast launch speed, launch less than a second.
+- Toggle fullscreen mode using **F11**
+- Custom UI with:
+  - Page refresh button  
+  - Easy room link pasting  
+- Optimized using custom Chromium flags for better performance
+- In-game HUD rearrangement and ad removal
+- Compact executable with fast launch (under 1 second)
+- No unnecessary dependencies or bloat
 
 ## Requirements
 
-To build the application, ensure the following are installed:
+To build the application locally, ensure the following are installed:
 
 - [Rust](https://www.rust-lang.org/tools/install)
-- [Node.js and npm](https://nodejs.org/)
-- Tauri CLI
+- [Node.js](https://nodejs.org/) and `npm`
+- [Tauri CLI](https://tauri.app/v1/guides/getting-started/prerequisites)
 
 ```bash
 cargo install create-tauri-app
 npm install -g @tauri-apps/cli
+```
 
-For anyone want to build it locally
+## Getting Started
 
-1. Clone the respository:
+1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/yourusername/evio-desktop-wrapper.git
-cd evio-desktop-wrapper
+git clone https://github.com/yourusername/evio-tauri-client.git
+cd evio-tauri-client
+```
 
-2. Install dependencies:
+2. **Install dependencies**:
 
 ```bash
 npm install
+```
 
-3. Build the application:
+3. **Build the application**:
 
 ```bash
 npm run tauri build
+```
 
-License
-This project is licensed under the MIT License.
+This will generate a standalone `.exe` file in the `src-tauri/target/release/` folder.
 
-Disclaimer: This project is not affiliated with, endorsed by, or supported by ev.io or Enthusiast Gaming. It is provided as-is for personal and educational purposes.
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+**Disclaimer**:  
+This project is not affiliated with, endorsed by, or officially supported by **ev.io** or **Enthusiast Gaming**. It is developed solely for personal and educational purposes.
