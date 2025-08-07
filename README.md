@@ -31,7 +31,7 @@ npm install -g @tauri-apps/cli
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/yourusername/evio-tauri-client.git
+git clone https://github.com/BalancerK/evio-tauri-client.git
 cd evio-tauri-client
 ```
 
