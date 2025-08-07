@@ -12,7 +12,7 @@ A lightweight, performance-optimized desktop client for the browser game [ev.io]
 - In-game HUD rearrangement and ad removal
 - Compact executable with fast launch (under 1 second)
 - No unnecessary dependencies or bloat
-- Unlocked fps (get 300+ fps in my pc)
+- Unlocked fps (get 300+ fps in my pc with Anti-aliasing disabled and 100 resolution)
 
 ## Requirements
 
