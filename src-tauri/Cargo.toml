@@ -1,0 +1,32 @@
+[package]
+name = "evio-desktop"
+version = "1.0.0"
+description = "Desktop wrapper for ev.io game"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.0", features = ["tray-icon", "image"] }
+tauri-plugin-shell = "2.0"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+codegen-units = 1       # Full cross-crate optimization
+lto = true               # Enable Link Time Optimization
+opt-level = "s"          # Optimize for size (or "3" for speed)
+panic = "abort"          # Remove stack unwinding
+strip = true             # Strip debug symbols from release binary
+
