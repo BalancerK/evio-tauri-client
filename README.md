@@ -14,6 +14,7 @@ A lightweight, performance-optimized desktop client for the browser game [ev.io]
 - No unnecessary dependencies or bloat
 - Unlocked fps (get 300+ fps in my pc with Anti-aliasing disabled and 100 resolution)
 - Small and compact size (3mb execution file)
+- Use Ctrl+Shift+d to delete cache
 
 ## Requirements
 
