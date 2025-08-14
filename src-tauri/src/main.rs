@@ -16,10 +16,13 @@ fn main() {
                 "main",  // Use a single consistent label
                 WebviewUrl::External("https://ev.io/".parse().unwrap()),
             )
-            .title("ev.io Desktop")
+            .title("EV-Tauri Client")
             .initialization_script(include_str!("../patch.js"))
             .additional_browser_args(
                 "--enable-accelerated-2d-canvas \
+                --enable-unsafe-webgpu \
+                --force-high-performance-gpu \
+                --use-angle-d3d11 \
                 --disable-gpu-vsync \
                 --disable-frame-rate-limit \
                 --disable-renderer-backgrounding \
