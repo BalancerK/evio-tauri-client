@@ -132,3 +132,53 @@ window.addEventListener("keydown", e => {
     }, 20000); // ping every 20 seconds
   });
 })();
+
+// patch.js — clear cache with Ctrl + Shift + D
+(function() {
+    async function clearCache() {
+        try {
+            console.log("[EV-Tauri] Clearing cache...");
+
+            // Clear localStorage
+            localStorage.clear();
+
+            // Clear sessionStorage
+            sessionStorage.clear();
+
+            // Clear IndexedDB
+            if (window.indexedDB && indexedDB.databases) {
+                const dbs = await indexedDB.databases();
+                for (const db of dbs) {
+                    if (db.name) {
+                        console.log(`[EV-Tauri] Deleting DB: ${db.name}`);
+                        indexedDB.deleteDatabase(db.name);
+                    }
+                }
+            }
+
+            // Clear caches API (service workers, assets)
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                for (const name of cacheNames) {
+                    console.log(`[EV-Tauri] Deleting cache: ${name}`);
+                    await caches.delete(name);
+                }
+            }
+
+            console.log("[EV-Tauri] Cache cleared successfully.");
+
+            // Reload to apply changes
+            location.reload(true);
+        } catch (e) {
+            console.error("[EV-Tauri] Cache clear failed:", e);
+        }
+    }
+
+    window.addEventListener("keydown", function(e) {
+        if (e.ctrlKey && e.shiftKey && e.code === "KeyD") {
+            e.preventDefault();
+            clearCache();
+        }
+    });
+})();
+
